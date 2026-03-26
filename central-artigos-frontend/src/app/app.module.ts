@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2026 ruan Marcelo Ramacioti Luz.
+ * Todos os direitos reservados.
+ */
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
