@@ -1,9 +1,22 @@
+/*
+ * Copyright (c) 2026 ruan Marcelo Ramacioti Luz.
+ * Todos os direitos reservados.
+ */
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SnackbarService {
 
-  constructor() { }
+  constructor(private snackbar:MatSnackBar) { }
+
+  openSnackbar(message:string){
+    this.snackbar.open(message,'', {
+      horizontalPosition:'center',
+      verticalPosition:'top',
+      duration:2000
+    });
+  }
 }
