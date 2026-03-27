@@ -12,7 +12,7 @@ export class ThemeService {
 
   constructor() { }
 
-  settheme(theme:string){
+  setTheme(theme:string){
     this.applyTheme(theme);
     localStorage.setItem('themeColor',theme);
   }

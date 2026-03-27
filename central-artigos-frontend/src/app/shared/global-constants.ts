@@ -1,8 +1,9 @@
-export class Globalconstants{
 /*
  * Copyright (c) 2026 ruan Marcelo Ramacioti Luz.
  * Todos os direitos reservados.
  */
+
+export class Globalconstants{
 
   //mensagem
   public static genericError:string = "Algo deu errado. Por favor, tente novamente mais tarde."
