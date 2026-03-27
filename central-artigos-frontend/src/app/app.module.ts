@@ -17,6 +17,7 @@ import {
   PB_DIRECTION,
   SPINNER,
 } from 'ngx-ui-loader';
+import { HomeComponent } from './home/home.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   text: 'Loading...',
@@ -32,7 +33,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
 };
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
