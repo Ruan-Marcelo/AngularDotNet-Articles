@@ -1,1 +1,59 @@
-<p>login works!</p>
+<div class="page">
+  <div class="login-container">
+    <div class="logo">
+      <mat-icon>lock</mat-icon>
+    </div>
+
+    <div class="title">Central de Artigos</div>
+    <div class="subtitle">Acesse sua conta</div>
+
+    <form [formGroup]="loginForm">
+      <div class="form-container">
+        <mat-form-field appearance="outline" [color]="themeService.getTheme()">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" required />
+          <mat-error
+            *ngIf="
+              loginForm.controls.email.touched &&
+              loginForm.controls.email.invalid
+            "
+          >
+            <span *ngIf="loginForm.controls.email.errors.required">
+              O email é obrigatorio
+            </span>
+            <span *ngIf="loginForm.controls.email.errors.pattern"
+              >This field is invalido</span
+            >
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" [color]="themeService.getTheme()">
+          <mat-label>Senha</mat-label>
+          <input matInput formControlName="password" required />
+          <mat-error
+            *ngIf="
+              loginForm.controls.password.touched &&
+              loginForm.controls.password.invalid
+            "
+          >
+            <span *ngIf="loginForm.controls.password.errors.required">
+              senha é obrigatorio
+            </span>
+          </mat-error>
+        </mat-form-field>
+
+        <button
+          mat-raised-button
+          [disabled]="!(loginForm.valid && loginForm.dirty)"
+          [color]="themeService.getTheme()"
+          (click)="handlesubmit()"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+
+    <div class="home-link">
+      <span (click)="onBack()"><span style="color: blue;cursor: pointer;">Voltar</span> </span>
+    </div>
+  </div>
+</div>

@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "TokenManager.cs",
               "ToolTip": "C:\\Users\\black\\Downloads\\AngularDotNet-Articles\\Back-end\\Central-de-Artigos\\TokenManager.cs",
               "RelativeToolTip": "TokenManager.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAD8AAABAAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAswD8AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-27T00:57:30.014Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "Controllers\\AppuserController.cs",
               "ViewState": "AgIAAHUAAAAAAAAAAAAAACQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-27T00:56:51.931Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-27T00:56:51.931Z"
             },
             {
               "$type": "Document",
@@ -60,8 +59,7 @@
               "RelativeToolTip": "Controllers\\CategoriaController.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAAADIAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-27T00:56:23.12Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-27T00:56:23.12Z"
             }
           ]
         }

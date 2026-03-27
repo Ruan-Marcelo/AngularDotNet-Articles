@@ -12,10 +12,10 @@ import { environment } from 'src/environments/environment.development';
 export class AppUserService {
   url = environment.apiUrl;
 
-  constructor(private httpClietn:HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   login(data:any){
-    return this.httpClietn.post(this.url+
+    return this.httpClient.post(this.url+
       "/appUser/login",data,{
         headers: new HttpHeaders().set('Content-Type',"application/json")
       }

@@ -1,9 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\black\\Downloads\\Central-de-Artigos-Angular-Asp.net--C-SQLServer-Database-JWT-Token-\\Back-end\\",
+  "WorkspaceRootPath": "C:\\Users\\black\\Downloads\\AngularDotNet-Articles\\Back-end\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D93B146B-2608-4B35-BBD1-D83817BA1F10}|Central-de-Artigos\\Central-de-Artigos.csproj|c:\\users\\black\\downloads\\central-de-artigos-angular-asp.net--c-sqlserver-database-jwt-token-\\back-end\\central-de-artigos\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D93B146B-2608-4B35-BBD1-D83817BA1F10}|Central-de-Artigos\\Central-de-Artigos.csproj|c:\\users\\black\\downloads\\angulardotnet-articles\\back-end\\central-de-artigos\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D93B146B-2608-4B35-BBD1-D83817BA1F10}|Central-de-Artigos\\Central-de-Artigos.csproj|solutionrelative:central-de-artigos\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D93B146B-2608-4B35-BBD1-D83817BA1F10}|Central-de-Artigos\\Central-de-Artigos.csproj|c:\\users\\black\\downloads\\angulardotnet-articles\\back-end\\central-de-artigos\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D93B146B-2608-4B35-BBD1-D83817BA1F10}|Central-de-Artigos\\Central-de-Artigos.csproj|solutionrelative:central-de-artigos\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -19,10 +23,23 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Global.asax.cs",
+              "DocumentMoniker": "C:\\Users\\black\\Downloads\\AngularDotNet-Articles\\Back-end\\Central-de-Artigos\\Global.asax.cs",
+              "RelativeDocumentMoniker": "Central-de-Artigos\\Global.asax.cs",
+              "ToolTip": "C:\\Users\\black\\Downloads\\AngularDotNet-Articles\\Back-end\\Central-de-Artigos\\Global.asax.cs*",
+              "RelativeToolTip": "Central-de-Artigos\\Global.asax.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T17:07:17.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "CategoriaController.cs",
-              "DocumentMoniker": "C:\\Users\\black\\Downloads\\Central-de-Artigos-Angular-Asp.net--C-SQLServer-Database-JWT-Token-\\Back-end\\Central-de-Artigos\\Controllers\\CategoriaController.cs",
+              "DocumentMoniker": "C:\\Users\\black\\Downloads\\AngularDotNet-Articles\\Back-end\\Central-de-Artigos\\Controllers\\CategoriaController.cs",
               "RelativeDocumentMoniker": "Central-de-Artigos\\Controllers\\CategoriaController.cs",
-              "ToolTip": "C:\\Users\\black\\Downloads\\Central-de-Artigos-Angular-Asp.net--C-SQLServer-Database-JWT-Token-\\Back-end\\Central-de-Artigos\\Controllers\\CategoriaController.cs",
+              "ToolTip": "C:\\Users\\black\\Downloads\\AngularDotNet-Articles\\Back-end\\Central-de-Artigos\\Controllers\\CategoriaController.cs",
               "RelativeToolTip": "Central-de-Artigos\\Controllers\\CategoriaController.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAqwEkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
