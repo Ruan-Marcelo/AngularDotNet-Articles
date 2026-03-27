@@ -16,7 +16,7 @@ export class AppUserService {
 
   login(data:any){
     return this.httpClient.post(this.url+
-      "/appUser/login",data,{
+      "/appuser/login",data,{
         headers: new HttpHeaders().set('Content-Type',"application/json")
       }
     )

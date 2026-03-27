@@ -5,15 +5,18 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 // Developed by Ruan Marcelo
 // GitHub: https://github.com/seu-usuario
 
 namespace Central_de_Artigos.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     [RoutePrefix("appuser")]
     public class AppuserController : ApiController
     {
-        CentralArtigosEntities db = new CentralArtigosEntities();
+
+      CentralArtigosEntities db = new CentralArtigosEntities();
 
         [HttpPost, Route("login")]
         public HttpResponseMessage Login([FromBody] Appuser appuser)

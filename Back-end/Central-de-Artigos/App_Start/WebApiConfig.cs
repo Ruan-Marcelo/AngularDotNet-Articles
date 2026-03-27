@@ -12,7 +12,7 @@ namespace Central_de_Artigos
     {
         public static void Register(HttpConfiguration config)
         {
-            var cors = new EnableCorsAttribute("*", " * "," *");
+            var cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);
             // Configuração e serviços de API Web
 

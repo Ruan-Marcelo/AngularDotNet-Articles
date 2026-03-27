@@ -32,7 +32,7 @@ responseMessage:any;
     })
   }
 
-  handlesubmit(){
+  handleSubmit(){
     this.ngxService.start();
     var formData = this.loginForm.value;
     var data = {
