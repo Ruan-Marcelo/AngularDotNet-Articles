@@ -17,13 +17,15 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 
 import { MatCardModule } from '@angular/material/card';
+import { ManageUsersComponent } from './manage-users/manage-users.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     LayoutComponent,
     HelpDetailsComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    ManageUsersComponent
   ],
   imports: [
     CommonModule,
