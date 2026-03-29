@@ -28,6 +28,10 @@
       <mat-icon *ngIf="themeService.getTheme() === 'warn'">done</mat-icon>
     </button>
   </mat-menu>
+
+  <button mat-icon-button (click)="logout()">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
 </mat-toolbar>
 
 <mat-sidenav-container>
@@ -56,10 +60,14 @@
       routerLinkActive="active"
       routerLink="/articleHub/help"
     >
-      <mat-icon>Help</mat-icon>
+      <mat-icon>help</mat-icon>
       <span>Help</span>
     </button>
   </mat-sidenav>
 
-  <mat-sidenav-content></mat-sidenav-content>
+  <mat-sidenav-content style="background: radial-gradient(circle at top, #243b55, #141e30);">
+    <div class="content mat-elevation-z8" style="background-color: #f0f0f0;">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
 </mat-sidenav-container>

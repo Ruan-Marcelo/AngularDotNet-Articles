@@ -16,6 +16,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 
+import { MatCardModule } from '@angular/material/card';
+
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -32,7 +34,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatMenuModule,
     MatIconModule,
     MatSidenavModule,
-    MatDividerModule
+    MatDividerModule,
+    MatCardModule
   ]
 })
 export class AdminModule { }
