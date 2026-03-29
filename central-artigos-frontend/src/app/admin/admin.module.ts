@@ -7,6 +7,14 @@ import { LayoutComponent } from './layout/layout.component';
 import { HelpDetailsComponent } from './help-details/help-details.component';
 import { ConfirmationComponent } from './dialog/confirmation/confirmation.component';
 
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -17,7 +25,14 @@ import { ConfirmationComponent } from './dialog/confirmation/confirmation.compon
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatDividerModule
   ]
 })
 export class AdminModule { }

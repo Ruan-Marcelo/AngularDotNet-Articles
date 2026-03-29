@@ -1,1 +1,65 @@
-<p>layout works!</p>
+<mat-toolbar [color]="themeService.getTheme()">
+  <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'side'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+    <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+  </button>
+
+  Central de artigos
+  <span class="spacer"></span>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>palette</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-fab color="primary" (click)="changeTheme('primary')">
+      <mat-icon *ngIf="themeService.getTheme() === 'primary'">done</mat-icon>
+    </button>
+
+    <button mat-fab color="accent" (click)="changeTheme('accent')">
+      <mat-icon *ngIf="themeService.getTheme() === 'accent'">done</mat-icon>
+    </button>
+
+    <button mat-fab color="warn" (click)="changeTheme('warn')">
+      <mat-icon *ngIf="themeService.getTheme() === 'warn'">done</mat-icon>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav opened="true" mode="side">
+    <img src="../../../assets/profile.png" alt="" class="avatar-elevation-z8" class="avatar"/>
+
+    <mat-divider class="custom-divider"></mat-divider>
+
+    <button
+      mat-button
+      class="menu-button"
+      [color]="themeService.getTheme()"
+      routerLinkActive="active"
+      routerLink="/articleHub/dashboard"
+    >
+      <mat-icon>home</mat-icon>
+      <span>Dashbard</span>
+    </button>
+
+    <mat-divider class="custom-divider"></mat-divider>
+
+    <button
+      mat-button
+      class="menu-button"
+      [color]="themeService.getTheme()"
+      routerLinkActive="active"
+      routerLink="/articleHub/help"
+    >
+      <mat-icon>Help</mat-icon>
+      <span>Help</span>
+    </button>
+  </mat-sidenav>
+
+  <mat-sidenav-content></mat-sidenav-content>
+</mat-sidenav-container>
