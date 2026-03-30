@@ -38,7 +38,7 @@ export class AppUserService {
 
   updateAppUser(data:any){
     return this.httpClient.post(this.url+
-      "/appuser/updateAppUser",data,{
+      "/appuser/updateUser",data,{
         headers: new HttpHeaders().set('Content-Type',"application/json")
       }
     )

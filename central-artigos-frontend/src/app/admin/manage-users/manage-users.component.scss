@@ -14,3 +14,7 @@ table {
   width: 100%;
   overflow-x: auto;
 }
+.mat-mdc-dialog-container,
+.mat-mdc-dialog-surface {
+  background-color: #ffffff !important;
+}

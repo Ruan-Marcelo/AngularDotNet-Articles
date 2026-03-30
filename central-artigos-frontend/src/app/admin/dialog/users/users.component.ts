@@ -1,10 +1,115 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit } from '@angular/core';
+import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { AppUserService } from 'src/app/services/app-user.service';
+import { SnackbarService } from 'src/app/services/snackbar.service';
+import { ThemeService } from 'src/app/services/theme.service';
+import { Globalconstants } from 'src/app/shared/global-constants';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  styleUrls: ['./users.component.scss'],
 })
-export class UsersComponent {
+export class UsersComponent implements OnInit {
+  onAddUser = new EventEmitter();
+  onEditUser = new EventEmitter();
+  usersForm: any = FormGroup;
+  dialogAction: any = 'Add';
+  action: any = 'Add';
+  responseMessage: any;
 
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public dialogData: any,
+    private formBuilder: FormBuilder,
+    public dialogRef: MatDialogRef<UsersComponent>,
+    private snackbaService: SnackbarService,
+    public themeService: ThemeService,
+    private appuserService: AppUserService,
+    private ngxService: NgxUiLoaderService,
+  ) {}
+
+  ngOnInit(): void {
+    this.usersForm = this.formBuilder.group({
+      email: [
+        null,
+        [Validators.required, Validators.pattern(Globalconstants.emailRegex)],
+      ],
+      name: [null, Validators.required],
+      password: [null, Validators.required],
+    });
+    if (this.dialogData.action === 'Edit') {
+      this.dialogAction = 'Edit';
+      this.action = 'Update';
+      this.usersForm.patchValue(this.dialogData.data);
+      this.usersForm.controls['password'].clearValidators();
+      this.usersForm.controls['password'].updateValueAndValidity();
+    }
+  }
+
+  handleSubmit() {
+    if (this.dialogAction === 'Edit') {
+      this.edit();
+    } else {
+      this.add();
+    }
+  }
+  add() {
+    this.ngxService.start();
+    var formData = this.usersForm.value;
+    var data = {
+      name: formData.name,
+      email: formData.email,
+      password: formData.password,
+    };
+    this.appuserService.addNewAppUser(data).subscribe(
+      (response: any) => {
+        this.ngxService.stop();
+        this.dialogRef.close();
+        this.onAddUser.emit();
+        this.responseMessage = response?.message;
+        this.snackbaService.openSnackbar(this.responseMessage);
+      },
+      (error) => {
+        this.ngxService.stop();
+        console.log(error);
+        if (error.error?.message) {
+          this.responseMessage = error.error?.message;
+        } else {
+          this.responseMessage = Globalconstants.genericError;
+        }
+        this.snackbaService.openSnackbar(this.responseMessage);
+      },
+    );
+  }
+
+  edit() {
+    this.ngxService.start();
+    var formData = this.usersForm.value;
+    var data = {
+      name: formData.name,
+      email: formData.email,
+      id: this.dialogData.data.id,
+    };
+    this.appuserService.updateAppUser(data).subscribe(
+      (response: any) => {
+        this.ngxService.stop();
+        this.dialogRef.close();
+        this.onEditUser.emit();
+        this.responseMessage = response?.message;
+        this.snackbaService.openSnackbar(this.responseMessage);
+      },
+      (error) => {
+        this.ngxService.stop();
+        console.log(error);
+        if (error.error?.message) {
+          this.responseMessage = error.error?.message;
+        } else {
+          this.responseMessage = Globalconstants.genericError;
+        }
+        this.snackbaService.openSnackbar(this.responseMessage);
+      },
+    );
+  }
 }
