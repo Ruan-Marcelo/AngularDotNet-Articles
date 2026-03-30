@@ -118,7 +118,7 @@ namespace Central_de_Artigos.Controllers
             }
         }
 
-        [HttpGet, Route("deleteArtigo/{id}")]
+        [HttpDelete, Route("deleteArtigo/{id}")]
         [CustomAuthenticationFilter]
         public HttpResponseMessage deleteArtigo(int id)
         {

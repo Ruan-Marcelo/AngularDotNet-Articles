@@ -13,6 +13,12 @@ import { ManageCategoryComponent } from './manage-category/manage-category.compo
 import { CategoryComponent } from './dialog/category/category.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button'; // para botões mat-raised-button
+import Quill from 'quill';
+import { QuillModule } from 'ngx-quill';
+import { SharedModule } from '../shared/shared.module';
+import { ManageArticleComponent } from './manage-article/manage-article.component';
+import { ArticleComponent } from './dialog/article/article.component';
+import { ViewArticleComponent } from './dialog/view-article/view-article.component';
 
 
 
@@ -25,7 +31,10 @@ import { MatButtonModule } from '@angular/material/button'; // para botões mat-
     ManageUsersComponent,
     UsersComponent,
     ManageCategoryComponent,
-    CategoryComponent
+    CategoryComponent,
+    ManageArticleComponent,
+    ArticleComponent,
+    ViewArticleComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +43,9 @@ import { MatButtonModule } from '@angular/material/button'; // para botões mat-
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    QuillModule.forRoot(),
+    SharedModule
   ]
 })
 export class AdminModule { }

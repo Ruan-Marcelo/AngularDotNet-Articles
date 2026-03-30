@@ -76,6 +76,16 @@
       <mat-icon>apartment</mat-icon>
       <span>Category</span>
     </button>
+    <button
+      mat-button
+      class="menu-button"
+      [color]="themeService.getTheme()"
+      routerLinkActive="active"
+      routerLink="/articleHub/artigo"
+    >
+      <mat-icon>storage</mat-icon>
+      <span>Artigos</span>
+    </button>
 
     <mat-divider class="custom-divider"></mat-divider>
 

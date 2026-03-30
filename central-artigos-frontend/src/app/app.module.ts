@@ -20,6 +20,8 @@ import {
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { TokenInterceptor } from './services/token.interceptor';
+import { QuillModule } from 'ngx-quill';
+import { SharedModule } from './shared/shared.module';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   text: 'Loading...',
@@ -45,6 +47,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     MaterialModule,
     HttpClientModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    QuillModule.forRoot(),
+    SharedModule
   ],
   providers: [
     HttpClientModule,
