@@ -19,6 +19,18 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
+
+
+
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -37,7 +49,16 @@ import { ManageUsersComponent } from './manage-users/manage-users.component';
     MatIconModule,
     MatSidenavModule,
     MatDividerModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
+    MatChipsModule,
+    MatOptionModule,
+    MatSlideToggleModule,
+    MatTooltipModule,
+    MatSelectModule,
+    FormsModule
   ]
 })
 export class AdminModule { }

@@ -39,6 +39,7 @@ export class ManageUsersComponent implements OnInit {
         this.dataSource = new MatTableDataSource(response);
       },
       (error: any) => {
+        this.ngxService.stop();
         console.log(error);
         if (error.error?.message) {
           this.responseMessage = error.error?.message;
@@ -50,5 +51,39 @@ export class ManageUsersComponent implements OnInit {
     );
   }
 
-  
+  applyFilter(event: any) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  handleAddAction() {
+  }
+  handleEditAction(values: any) {
+  }
+
+  onChange(status: any, id: any) {
+    this.ngxService.start();
+    var data = {
+      id: id,
+      status: status.toString(),
+    };
+    this.appuserService.updateAppUserStatus(data).subscribe(
+      (response: any) => {
+        this.ngxService.stop();
+        this.responseMessage = response?.message;
+        this.snackbarService.openSnackbar(this.responseMessage);
+        this.tableData();
+      },
+      (error) => {
+        this.ngxService.stop();
+        console.log(error);
+        if (error.error?.message) {
+          this.responseMessage = error.error?.message;
+        } else {
+          this.responseMessage = Globalconstants.genericError;
+        }
+        this.snackbarService.openSnackbar(this.responseMessage);
+      },
+    );
+  }
 }
