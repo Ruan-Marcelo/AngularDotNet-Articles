@@ -2,20 +2,27 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+Este projeto mantém atualizações de segurança para as seguintes versões:
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| 1.0  | ✅        |
+
+
+> Apenas versões listadas como "Suportado" recebem correções de segurança.
+
+---
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+Se você descobrir uma vulnerabilidade de segurança neste projeto, siga estas instruções:
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+1. Envie um relatório detalhado para o e-mail: blackingody@gmail.com  
+   - Inclua detalhes do problema, passos para reproduzir e impacto estimado.
+2. Nós confirmaremos o recebimento dentro de **48 horas úteis**.
+3. Um relatório será analisado e uma correção será planejada ou a vulnerabilidade será documentada, dependendo da gravidade.
+4. Você será informado sobre:
+   - A aceitação ou recusa da vulnerabilidade reportada.
+   - O status da correção (patch, atualização ou mitigação temporária).
+
+> ⚠️ Não publique vulnerabilidades publicamente antes de receber uma resposta nossa, para proteger todos os usuários do projeto.
