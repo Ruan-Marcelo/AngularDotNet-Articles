@@ -31,7 +31,7 @@ export class AppUserService {
   }
   getAllAppUsers(){
     return this.httpClient.get(this.url+
-      "/appuser/getAllAppUsers",{
+      "/appuser/getAllAppUser",{
       }
     )
   }
