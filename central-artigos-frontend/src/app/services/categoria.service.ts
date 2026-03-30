@@ -10,20 +10,20 @@ export class CategoryService {
 
   constructor(private httpClient:HttpClient) { }
 
-  addNewCategory(data:any){
-    return this.httpClient.post(this.url + '/category/addNewCategory', data,{
+  addNewCategoria(data:any){
+    return this.httpClient.post(this.url + '/categoria/addNewCategoria', data,{
       headers: new HttpHeaders().set('Content-Type', 'application/json')
     });
   }
 
-   updateCategory(data:any){
-    return this.httpClient.post(this.url + '/category/updateCategory', data,{
+   updateCategoria(data:any){
+    return this.httpClient.post(this.url + '/categoria/updateCategoria', data,{
       headers: new HttpHeaders().set('Content-Type', 'application/json')
     });
   }
 
-  getAllcategory(){
-    return this.httpClient.get(this.url + '/category/getAllCategory');
+  getAllCategorias(){
+    return this.httpClient.get(this.url + '/categoria/getAllCategorias');
   }
 
 }

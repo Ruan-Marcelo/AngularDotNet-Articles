@@ -36,7 +36,12 @@
 
 <mat-sidenav-container>
   <mat-sidenav #sidenav opened="true" mode="side">
-    <img src="../../../assets/profile.png" alt="" class="avatar-elevation-z8" class="avatar"/>
+    <img
+      src="../../../assets/profile.png"
+      alt=""
+      class="avatar-elevation-z8"
+      class="avatar"
+    />
 
     <mat-divider class="custom-divider"></mat-divider>
 
@@ -51,7 +56,7 @@
       <span>Dashbard</span>
     </button>
 
-     <button
+    <button
       mat-button
       class="menu-button"
       [color]="themeService.getTheme()"
@@ -60,6 +65,16 @@
     >
       <mat-icon>group</mat-icon>
       <span>User</span>
+    </button>
+    <button
+      mat-button
+      class="menu-button"
+      [color]="themeService.getTheme()"
+      routerLinkActive="active"
+      routerLink="/articleHub/categoria"
+    >
+      <mat-icon>apartment</mat-icon>
+      <span>Category</span>
     </button>
 
     <mat-divider class="custom-divider"></mat-divider>
@@ -76,8 +91,10 @@
     </button>
   </mat-sidenav>
 
-  <mat-sidenav-content style="background: radial-gradient(circle at top, #243b55, #141e30);">
-    <div class="content mat-elevation-z8" style="background-color: #f0f0f0;">
+  <mat-sidenav-content
+    style="background: radial-gradient(circle at top, #243b55, #141e30)"
+  >
+    <div class="content mat-elevation-z8" style="background-color: #f0f0f0">
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>

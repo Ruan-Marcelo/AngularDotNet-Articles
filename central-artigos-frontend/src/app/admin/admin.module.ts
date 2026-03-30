@@ -9,6 +9,10 @@ import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './dialog/users/users.component';
 import { MaterialModule } from '../shared/material-module';
+import { ManageCategoryComponent } from './manage-category/manage-category.component';
+import { CategoryComponent } from './dialog/category/category.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button'; // para botões mat-raised-button
 
 
 
@@ -19,14 +23,18 @@ import { MaterialModule } from '../shared/material-module';
     HelpDetailsComponent,
     ConfirmationComponent,
     ManageUsersComponent,
-    UsersComponent
+    UsersComponent,
+    ManageCategoryComponent,
+    CategoryComponent
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatButtonModule
   ]
 })
 export class AdminModule { }
