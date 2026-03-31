@@ -1,0 +1,5 @@
+CREATE TABLE categoria(
+id INT IDENTITY(1,1) PRIMARY KEY,
+NAME VARCHAR(255) NOT NULL
+);
+EXEC sp_rename 'NAME', 'name';
