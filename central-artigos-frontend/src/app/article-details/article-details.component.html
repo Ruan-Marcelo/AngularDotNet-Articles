@@ -1,0 +1,15 @@
+<mat-toolbar [color]="themeService.getTheme()">
+  <mat-toolbar-row fxLayout="row">
+    <span>Visualizar Artigos</span> &nbsp; [Published on
+    {{ articleDetails.data_publicacao | date: "dd-MM-yyyy" }}]
+    <span class="spacer"></span>
+    <button class="mat-dialog-close" mat-icon-button mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-dialog-content class="mat-typography">
+  Titulo: {{ articleDetails.titulo }}
+  <hr />
+  <div [innerHTML]="articleDetails.conteudo | sanitizeHtml"></div>
+</mat-dialog-content>

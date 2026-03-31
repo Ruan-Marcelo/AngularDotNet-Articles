@@ -22,6 +22,29 @@
   </button>
 </mat-toolbar>
 
+  <div class="sontent-wrapper">
+    <br>
+    <mat-form-field appearance="fill" [color]="themeService.getTheme()">
+      <mat-label>Pesquisar artigos...</mat-label>
+      <input matInput [(ngModel)]="searchText" (input)="filteredItems()" placeholder="Digite aqui...">
+    </mat-form-field>
+
+    <div class="car-container">
+      <mat-card *ngFor="let card of filteredItems()" class="card" (click)="handleViewAction(card)">
+        <mat-card-header>
+          <mat-card-title>{{ card.titulo }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          Categoria: {{ card.categoriaName }}
+          <br>
+          Publicado em: {{ card.data_publicacao | date: "dd-MM-yyyy" }}
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <h1 *ngIf="filteredItems()?.length === 0">nothing to show!</h1>
+  </div>
+
 <mat-toolbar [color]="themeService.getTheme()" class="footer">
-  <div class="toolbar-content"> Todos os direitos reservados </div>
+  <div class="toolbar-content"> Todos os direitos reservados zruanzito.com </div>
 </mat-toolbar>
