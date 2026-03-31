@@ -1,3 +1,71 @@
-mat-card{
+/* Container */
+.help-container {
+  max-width: 600px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card padrão */
+mat-card {
   padding: 20px;
+  border-radius: 14px;
+  transition: 0.3s ease;
+}
+
+/* Card ajuda */
+.help-card {
+  background: #f5f5f5;
+}
+
+/* Cabeçalho */
+.help-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Texto */
+.help-text {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Card contato */
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Email */
+.email {
+  font-weight: 600;
+  color: #3f51b5;
+}
+
+/* Hover */
+.contact-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Dark mode */
+body.dark-theme .help-card {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+body.dark-theme .help-text {
+  color: #bbb;
+}
+
+body.dark-theme .contact-card {
+  background: #1e1e1e;
 }
