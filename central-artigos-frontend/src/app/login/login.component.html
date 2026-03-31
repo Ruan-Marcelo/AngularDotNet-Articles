@@ -28,7 +28,26 @@
         </mat-form-field>
         <mat-form-field appearance="outline" [color]="themeService.getTheme()">
           <mat-label>Senha</mat-label>
-          <input matInput formControlName="password" required />
+
+          <input
+            matInput
+            [type]="hidePassword ? 'password' : 'text'"
+            formControlName="password"
+            required
+          />
+
+          <!-- Botão mostrar/ocultar -->
+          <button
+            mat-icon-button
+            matSuffix
+            type="button"
+            (click)="hidePassword = !hidePassword"
+          >
+            <mat-icon>
+              {{ hidePassword ? "visibility_off" : "visibility" }}
+            </mat-icon>
+          </button>
+
           <mat-error
             *ngIf="
               loginForm.controls.password.touched &&
@@ -36,7 +55,7 @@
             "
           >
             <span *ngIf="loginForm.controls.password.errors.required">
-              senha é obrigatorio
+              Senha é obrigatória
             </span>
           </mat-error>
         </mat-form-field>
@@ -53,7 +72,9 @@
     </form>
 
     <div class="home-link">
-      <span (click)="onBack()"><span style="color: blue;cursor: pointer;">Voltar</span> </span>
+      <span (click)="onBack()"
+        ><span style="color: blue; cursor: pointer">Voltar</span>
+      </span>
     </div>
   </div>
 </div>

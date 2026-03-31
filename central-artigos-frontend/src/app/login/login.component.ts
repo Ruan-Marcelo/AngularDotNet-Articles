@@ -10,11 +10,13 @@ import { Globalconstants } from '../shared/global-constants';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+
 })
 export class LoginComponent implements OnInit{
 loginForm:any = FormGroup;
 responseMessage:any;
+hidePassword: boolean = true;
 
     constructor(
       private formBuilder:FormBuilder,
