@@ -34,26 +34,30 @@ export class ArticleComponent implements OnInit {
     private ngxService: NgxUiLoaderService,
   ) {}
 
- ngOnInit(): void {
-  this.articleForm = this.formBuilder.group({
-    titulo: [null, Validators.required],
-    conteudo: [null, Validators.required],
-    categoriaId: [null, Validators.required],
-    status: [null, Validators.required],
-  });
+  ngOnInit(): void {
+    this.articleForm = this.formBuilder.group({
+      titulo: [null, Validators.required],
+      conteudo: [null, Validators.required],
+      categoriaId: [null, Validators.required],
+      status: [null, Validators.required],
+    });
 
-  if (this.dialogData.action === 'Edit') {
-    this.dialogAction = 'Edit';
-    this.action = 'Update';
-    this.articleForm.patchValue(this.dialogData.data);
+    if (this.dialogData.action === 'Edit') {
+      this.dialogAction = 'Edit';
+      this.action = 'Update';
+      this.articleForm.patchValue({
+        titulo: this.dialogData.data.titulo,
+        conteudo: this.dialogData.data.conteudo,
+        categoriaId: this.dialogData.data.categoriaId,
+        status: this.dialogData.data.status,
+      });
+    }
+
+      this.getAllCategorias();
+
   }
-
-  setTimeout(() => {
-    this.getAllCategorias();
-  });
-}
   getAllCategorias() {
-     this.ngxService.start();
+    this.ngxService.start();
     this.categoryService.getAllCategorias().subscribe(
       (response: any) => {
         this.categorias = response;
@@ -72,11 +76,11 @@ export class ArticleComponent implements OnInit {
     );
   }
 
-   handleSubmit() {
+  handleSubmit() {
     if (this.dialogAction === 'Edit') {
-     this.edit() ;
-    } else  {
-      this.add() ;
+      this.edit();
+    } else {
+      this.add();
     }
   }
 
@@ -111,10 +115,10 @@ export class ArticleComponent implements OnInit {
     );
   }
   edit() {
-       this.ngxService.start();
+    this.ngxService.start();
     var formData = this.articleForm.value;
     var data = {
-      id:this.dialogData.data.id,
+      id: this.dialogData.data.id,
       titulo: formData.titulo,
       conteudo: formData.conteudo,
       categoriaId: formData.categoriaId,
@@ -141,5 +145,4 @@ export class ArticleComponent implements OnInit {
       },
     );
   }
-
 }
