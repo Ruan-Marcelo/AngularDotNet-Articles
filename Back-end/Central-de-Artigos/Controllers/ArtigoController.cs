@@ -78,7 +78,7 @@ namespace Central_de_Artigos.Controllers
                          artigo.conteudo,
                          artigo.status,
                          artigo.data_publicacao,
-                         categoriaId = categoria.name,
+                         categoriaId = categoria.id,
                          categoriaName = categoria.name
                      })
                      .Where(a => a.status == "publicado")

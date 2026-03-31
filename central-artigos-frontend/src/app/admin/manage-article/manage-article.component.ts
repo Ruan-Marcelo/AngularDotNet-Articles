@@ -8,6 +8,7 @@ import { ThemeService } from 'src/app/services/theme.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { Globalconstants } from 'src/app/shared/global-constants';
 import { ConfirmationComponent } from '../dialog/confirmation/confirmation.component';
+import { ArticleComponent } from '../dialog/article/article.component';
 
 @Component({
   selector: 'app-manage-article',
@@ -17,7 +18,7 @@ import { ConfirmationComponent } from '../dialog/confirmation/confirmation.compo
 export class ManageArticleComponent implements OnInit {
   displayedColumns: string[] = [
     'titulo',
-    'categoryName',
+    'categoriaName',
     'status',
     'data_publicacao',
     'edit',
@@ -59,53 +60,81 @@ export class ManageArticleComponent implements OnInit {
     );
   }
 
-  applyFilter(event:Event) {
+  applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   handleAddAction() {
-
-   }
-
-   handleViewAction(values: any) {
-
-   }
-   handleEditAction(values: any) {
-
-   }
-
-   onDelete(value:any){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = {
-      message: 'delete '+ value.titulo + 'artigo',
+      action: 'Add',
     };
-    const dialogRef = this.dialog.open(ConfirmationComponent, dialogConfig);
-    const res = dialogRef.componentInstance.onEmitStatusChange.subscribe((response) => {
-      this.ngxService.start();
-      this.deleteProduct(value.id);
+    dialogConfig.width = '850px';
+    const dialogRef = this.dialog.open(ArticleComponent, dialogConfig);
+    this.router.events.subscribe(() => {
       dialogRef.close();
     });
-   }
+    const res = dialogRef.componentInstance.onAddArticle.subscribe(
+      (response) => {
+        this.tableData();
+      },
+    );
+  }
 
-   deleteProduct(id:any){
+  handleViewAction(values: any) {}
+  handleEditAction(values: any) {
+
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {
+      action: 'Edit',
+      data: values,
+    };
+    dialogConfig.width = '850px';
+    const dialogRef = this.dialog.open(ArticleComponent, dialogConfig);
+    this.router.events.subscribe(() => {
+      dialogRef.close();
+    });
+    const res = dialogRef.componentInstance.onEditArticle.subscribe(
+      (response) => {
+        this.tableData();
+      },
+    );
+  }
+
+  onDelete(value: any) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {
+      message: 'delete ' + value.titulo + 'artigo',
+    };
+    const dialogRef = this.dialog.open(ConfirmationComponent, dialogConfig);
+    const res = dialogRef.componentInstance.onEmitStatusChange.subscribe(
+      (response) => {
+        this.ngxService.start();
+        this.deleteProduct(value.id);
+        dialogRef.close();
+      },
+    );
+  }
+
+  deleteProduct(id: any) {
     this.articleService.deleteArtigo(id).subscribe(
-      (response:any) => {
+      (response: any) => {
         this.ngxService.stop();
         this.tableData();
         this.responseMessage = response.message;
         this.snackbarService.openSnackbar(this.responseMessage);
       },
-      (error:any) => {
+      (error: any) => {
         this.ngxService.stop();
         console.log(error);
-        if(error.error?.message){
+        if (error.error?.message) {
           this.responseMessage = error.error?.message;
         } else {
           this.responseMessage = Globalconstants.genericError;
         }
         this.snackbarService.openSnackbar(this.responseMessage);
-      }
+      },
     );
-   }
+  }
 }

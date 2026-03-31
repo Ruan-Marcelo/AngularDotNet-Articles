@@ -19,7 +19,7 @@ export class ArticleComponent implements OnInit {
   articleForm: any = FormGroup;
   dialogAction: any = 'Add';
   action: any = 'Add';
-  categorys: any;
+  categorias: any;
   responseMessage: any;
 
   constructor(
@@ -27,40 +27,36 @@ export class ArticleComponent implements OnInit {
     public dialogData: any,
     private formBuilder: FormBuilder,
     private categoryService: CategoryService,
-    public ddialogRef: MatDialogRef<ArticleComponent>,
+    public dialogRef: MatDialogRef<ArticleComponent>,
     private snaclbarService: SnackbarService,
     public themeService: ThemeService,
     private articleService: ArticleService,
     private ngxService: NgxUiLoaderService,
   ) {}
 
-  ngOnInit(): void {
-    this.articleForm = this.formBuilder.group({
-      titulo: [null, Validators.required],
-      conteudo: [null, Validators.required],
-      categoryId: [null, Validators.required],
-      status: [null, Validators.required],
-    });
-    if (this.dialogData.action === 'Edit') {
-      this.dialogAction = 'Edit';
-      this.action = 'Update';
-      this.articleForm.patchValue(this.dialogData.data);
-    }
-  }
-  handleSubmit() {
-    if (this.dialogAction === 'Add') {
-      this.onAddArticle.emit(this.articleForm.value);
-    } else if (this.dialogAction === 'Edit') {
-      this.onEditArticle.emit(this.articleForm.value);
-    }
-    this.getAllCategorias();
-    this.ngxService.start();
+ ngOnInit(): void {
+  this.articleForm = this.formBuilder.group({
+    titulo: [null, Validators.required],
+    conteudo: [null, Validators.required],
+    categoriaId: [null, Validators.required],
+    status: [null, Validators.required],
+  });
+
+  if (this.dialogData.action === 'Edit') {
+    this.dialogAction = 'Edit';
+    this.action = 'Update';
+    this.articleForm.patchValue(this.dialogData.data);
   }
 
+  setTimeout(() => {
+    this.getAllCategorias();
+  });
+}
   getAllCategorias() {
+     this.ngxService.start();
     this.categoryService.getAllCategorias().subscribe(
       (response: any) => {
-        this.categorys = response;
+        this.categorias = response;
         this.ngxService.stop();
       },
       (error: any) => {
@@ -75,4 +71,75 @@ export class ArticleComponent implements OnInit {
       },
     );
   }
+
+   handleSubmit() {
+    if (this.dialogAction === 'Edit') {
+     this.edit() ;
+    } else  {
+      this.add() ;
+    }
+  }
+
+  add() {
+    this.ngxService.start();
+    var formData = this.articleForm.value;
+    var data = {
+      titulo: formData.titulo,
+      conteudo: formData.conteudo,
+      categoriaId: formData.categoriaId,
+      status: formData.status,
+    };
+    this.articleService.addNewArtigo(data).subscribe(
+      (response: any) => {
+        this.dialogRef.close();
+        this.ngxService.stop();
+        this.onAddArticle.emit();
+        this.responseMessage = response.message;
+        this.snaclbarService.openSnackbar(this.responseMessage);
+      },
+      (error: any) => {
+        this.dialogRef.close();
+        this.ngxService.stop();
+        console.log(error);
+        if (error.error?.message) {
+          this.responseMessage = error.error?.message;
+        } else {
+          this.responseMessage = Globalconstants.genericError;
+        }
+        this.snaclbarService.openSnackbar(this.responseMessage);
+      },
+    );
+  }
+  edit() {
+       this.ngxService.start();
+    var formData = this.articleForm.value;
+    var data = {
+      id:this.dialogData.data.id,
+      titulo: formData.titulo,
+      conteudo: formData.conteudo,
+      categoriaId: formData.categoriaId,
+      status: formData.status,
+    };
+    this.articleService.updateArtigo(data).subscribe(
+      (response: any) => {
+        this.dialogRef.close();
+        this.ngxService.stop();
+        this.onEditArticle.emit();
+        this.responseMessage = response.message;
+        this.snaclbarService.openSnackbar(this.responseMessage);
+      },
+      (error: any) => {
+        this.dialogRef.close();
+        this.ngxService.stop();
+        console.log(error);
+        if (error.error?.message) {
+          this.responseMessage = error.error?.message;
+        } else {
+          this.responseMessage = Globalconstants.genericError;
+        }
+        this.snaclbarService.openSnackbar(this.responseMessage);
+      },
+    );
+  }
+
 }

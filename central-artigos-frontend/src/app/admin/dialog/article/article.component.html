@@ -1,1 +1,113 @@
-<p>article works!</p>
+<mat-toolbar [color]="themeService.getTheme()">
+  <mat-toolbar-row fxLayout="row">
+    <span class="title-center">{{ dialogData.action }} Artigo</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="articleForm">
+    <div fxFlex fxLayout="column">
+      <div fxLayout="row wrap">
+        <mat-form-field
+          appearance="fill"
+          fxFlex
+          [color]="themeService.getTheme()"
+        >
+          <mat-label>Titulo</mat-label>
+          <input matInput formControlName="titulo" required />
+
+          <mat-error
+            *ngIf="
+              articleForm.controls.titulo.touched &&
+              articleForm.controls.titulo.invalid
+            "
+          >
+            <span *ngIf="articleForm.controls.titulo.errors?.required">
+              titulo é obrigatório
+            </span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row wrap">
+        <div fxFlex style="margin: 10px">
+          <quill-editor
+            [styles]="{ height: '300px' }"
+            theme="snow"
+            [placeholder]="'Artigo conteudo'"
+
+            formControlName="conteudo"
+          ></quill-editor>
+          <mat-error
+            *ngIf="
+              articleForm.controls.conteudo.touched &&
+              articleForm.controls.conteudo.invalid
+            "
+          >
+            <span *ngIf="articleForm.controls.conteudo.errors.required">
+              conteúdo é obrigatório
+            </span>
+          </mat-error>
+        </div>
+      </div>
+
+      <div fxLayout="row wrap">
+        <mat-form-field
+          appearance="fill"
+          fxFlex
+          [color]="themeService.getTheme()"
+        >
+          <mat-label>Categorias</mat-label>
+          <mat-select formControlName="categoriaId" required>
+            <mat-option
+              *ngFor="let categoria of categorias"
+              [value]="categoria.id"
+            >
+              {{ categoria.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error
+            *ngIf="
+              articleForm.controls.categoriaId.touched &&
+              articleForm.controls.categoriaId.invalid
+            "
+          >
+            <span *ngIf="articleForm.controls.categoriaId.errors?.required">
+              categoria é obrigatória
+            </span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field
+          appearance="fill"
+          fxFlex
+          [color]="themeService.getTheme()"
+        >
+          <mat-label>Status</mat-label>
+          <mat-select formControlName="status" required>
+            <mat-option value="rascunho"> Rascunho </mat-option>
+            <mat-option value="publicado"> Publicado </mat-option>
+          </mat-select>
+          <mat-error
+            *ngIf="
+              articleForm.controls.status.touched &&
+              articleForm.controls.status.invalid
+            "
+          >
+            <span *ngIf="articleForm.controls.status.errors?.required">
+              status é obrigatório
+            </span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-content align="center">
+  <button mat-raised-button [color]="themeService.getTheme()" type="submit" (click)="handleSubmit()" [disabled]="!articleForm.valid ">
+    {{ action }}
+  </button>
+  <button mat-raised-button [color]="themeService.getTheme()" mat-dialog-close>
+    Fechar
+  </button>
+</mat-dialog-content>
