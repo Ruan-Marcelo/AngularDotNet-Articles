@@ -1,3 +1,58 @@
-<mat-card>
-  <b><span>Seja bem vindo ADMIN!!</span></b>
-</mat-card>
+<div class="dashboard-container">
+
+  <mat-card class="welcome-card" [ngClass]="themeService.getTheme()">
+
+    <div class="welcome-content">
+
+      <div class="icon">
+        <mat-icon>admin_panel_settings</mat-icon>
+      </div>
+
+      <div class="text">
+        <h2>Seja bem-vindo, Admin 👋</h2>
+        <p>Gerencie seus artigos, categorias e usuários.</p>
+      </div>
+
+    </div>
+
+  </mat-card>
+
+</div>
+
+<div class="stats-container">
+
+  <!-- SKELETON -->
+  <ng-container *ngIf="isLoading; else content">
+    <div class="stat-card skeleton" *ngFor="let i of [1,2,3,4]"></div>
+  </ng-container>
+
+  <!-- CONTEÚDO REAL -->
+  <ng-template #content>
+
+    <mat-card class="stat-card" [ngClass]="themeService.getTheme()" (click)="goTo('artigos')">
+      <mat-icon>article</mat-icon>
+      <h3>{{ totalArtigos }}</h3>
+      <p>Artigos</p>
+    </mat-card>
+
+    <mat-card class="stat-card" [ngClass]="themeService.getTheme()" (click)="goTo('usuarios')">
+      <mat-icon>people</mat-icon>
+      <h3>{{ totalUsuarios }}</h3>
+      <p>Usuários</p>
+    </mat-card>
+
+    <mat-card class="stat-card" [ngClass]="themeService.getTheme()" (click)="goTo('categorias')">
+      <mat-icon>category</mat-icon>
+      <h3>{{ totalCategorias }}</h3>
+      <p>Categorias</p>
+    </mat-card>
+
+    <mat-card class="stat-card" [ngClass]="themeService.getTheme()" (click)="goTo('views')">
+      <mat-icon>visibility</mat-icon>
+      <h3>{{ totalVisualizacoes }}</h3>
+      <p>Visualizações</p>
+    </mat-card>
+
+  </ng-template>
+
+</div>
