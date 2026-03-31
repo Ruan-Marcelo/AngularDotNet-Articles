@@ -1,50 +1,122 @@
-<mat-toolbar class="mat-elevation-z8 "[color]="themeService.getTheme()">
-  Central de artigos
+<mat-toolbar [color]="themeService.getTheme()" class="social-bar">
+  <a href="https://www.linkedin.com/in/ruan-marcelo/" target="_blank">
+    <i class="fab fa-linkedin"></i>
+  </a>
+
+  <a href="https://github.com/Ruan-Marcelo" target="_blank">
+    <i class="fab fa-github"></i>
+  </a>
+
+  <a href="https://www.instagram.com/ruan.luzzz/" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="https://zruanzito.com.br/" target="_blank">
+    <i class="fas fa-globe"></i>
+  </a>
+
+  <a href="mailto:seuemail@email.com">
+    <i class="fas fa-envelope"></i>
+  </a>
+</mat-toolbar>
+<mat-toolbar class="toolbar mat-elevation-z4" [color]="themeService.getTheme()">
+
+  <!-- Logo / Título -->
+  <span class="logo">📚 Central de Artigos</span>
+
   <span class="spacer"></span>
-  <button mat-icon-button [matMenuTriggerFor]="menu">
+
+  <!-- Botão de tema -->
+  <button mat-icon-button class="icon-btn" [matMenuTriggerFor]="menu">
     <mat-icon>palette</mat-icon>
   </button>
 
-  <mat-menu #menu="matMenu">
-    <button mat-fab color="primary" class="button-margin" (click)="changeTheme('primary')">
-      <mat-icon *ngIf="themeService.getTheme() === 'primary' ">done</mat-icon>
-    </button>
-    <button mat-fab color="accent" class="button-margin" (click)="changeTheme('accent')">
-      <mat-icon *ngIf="themeService.getTheme() === 'accent' ">done</mat-icon>
-    </button>
-    <button mat-fab color="warn" class="button-margin" (click)="changeTheme('warn')">
-      <mat-icon *ngIf="themeService.getTheme() === 'warn' ">done</mat-icon>
-    </button>
+  <!-- Menu -->
+  <mat-menu #menu="matMenu" class="theme-menu">
+    <div class="theme-options">
+
+      <button mat-mini-fab color="primary" (click)="changeTheme('primary')">
+        <mat-icon *ngIf="themeService.getTheme() === 'primary'">done</mat-icon>
+      </button>
+
+      <button mat-mini-fab color="accent" (click)="changeTheme('accent')">
+        <mat-icon *ngIf="themeService.getTheme() === 'accent'">done</mat-icon>
+      </button>
+
+      <button mat-mini-fab color="warn" (click)="changeTheme('warn')">
+        <mat-icon *ngIf="themeService.getTheme() === 'warn'">done</mat-icon>
+      </button>
+
+    </div>
   </mat-menu>
 
-  <button mat-icon-button [routerLink]="['/login']">
+  <!-- Login -->
+  <button mat-icon-button class="icon-btn" [routerLink]="['/login']">
     <mat-icon>login</mat-icon>
   </button>
+
 </mat-toolbar>
 
-  <div class="sontent-wrapper">
-    <br>
-    <mat-form-field appearance="fill" [color]="themeService.getTheme()">
-      <mat-label>Pesquisar artigos...</mat-label>
-      <input matInput [(ngModel)]="searchText" (input)="filteredItems()" placeholder="Digite aqui...">
-    </mat-form-field>
+<div class="content-wrapper">
 
-    <div class="car-container">
-      <mat-card *ngFor="let card of filteredItems()" class="card" (click)="handleViewAction(card)">
-        <mat-card-header>
-          <mat-card-title>{{ card.titulo }}</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          Categoria: {{ card.categoriaName }}
-          <br>
-          Publicado em: {{ card.data_publicacao | date: "dd-MM-yyyy" }}
-        </mat-card-content>
-      </mat-card>
-    </div>
+<div class="search-container">
+  <mat-form-field appearance="outline" class="search-field" [color]="themeService.getTheme()">
 
-    <h1 *ngIf="filteredItems()?.length === 0">nothing to show!</h1>
+    <mat-icon matPrefix>search</mat-icon>
+
+    <mat-label>Pesquisar artigos...</mat-label>
+
+    <input
+      matInput
+      [(ngModel)]="searchText"
+      (input)="filteredItems()"
+      placeholder="Digite o título..." />
+
+    <button *ngIf="searchText" matSuffix mat-icon-button (click)="searchText=''; filteredItems()">
+      <mat-icon>close</mat-icon>
+    </button>
+
+  </mat-form-field>
+</div>
+
+  <div class="card-container">
+    <mat-card
+      *ngFor="let card of filteredItems()"
+      class="custom-card"
+      (click)="handleViewAction(card)">
+
+      <mat-card-header>
+        <mat-card-title>{{ card.titulo }}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p><strong>Categoria:</strong> {{ card.categoriaName }}</p>
+        <p><strong>Publicado em:</strong> {{ card.data_publicacao | date: "dd/MM/yyyy" }}</p>
+      </mat-card-content>
+
+    </mat-card>
   </div>
 
+  <h1 *ngIf="filteredItems()?.length === 0" class="empty">
+    Nenhum artigo encontrado
+  </h1>
+
+</div>
+
 <mat-toolbar [color]="themeService.getTheme()" class="footer">
-  <div class="toolbar-content"> Todos os direitos reservados zruanzito.com </div>
+
+  <div class="footer-content">
+
+    <span class="copy">
+      © 2026 Todos os direitos reservados
+    </span>
+
+    <span class="divider">|</span>
+
+    <a href="https://zruanzito.com.br/" target="_blank" class="site-link">
+      zruanzito.com.br
+    </a>
+
+  </div>
+
 </mat-toolbar>

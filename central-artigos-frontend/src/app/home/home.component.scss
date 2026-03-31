@@ -1,53 +1,238 @@
+/* ================= LAYOUT ================= */
+
+.content-wrapper {
+  padding: 20px;
+}
+
 .spacer {
-    flex: 1 1 auto;
-  }
+  flex: 1 1 auto;
+}
 
-  .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 
-  .fill-remaining-space {
-    flex: 1;
-  }
+.fill-remaining-space {
+  flex: 1;
+}
+/* Toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+/* Ícones dentro da toolbar */
+.toolbar mat-icon {
+  color: white !important;
+}
+/* Logo */
+.logo {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
 
-  .content-wrapper {
-    position: absolute;
-    top: 64px; /* Adjust this based on your header's height */
-    bottom: 56px; /* Adjust this based on your footer's height */
-    left: 0;
-    right: 0;
-    overflow: auto;
-  }
+/* Espaço */
+.spacer {
+  flex: 1;
+}
 
-  .toolbar-content {
-    display: flex;
-    justify-content: center; /* Horizontally center content */
-    align-items: center; /* Vertically center content */
-    width: 100%; /* Ensure content spans full width */
-  }
+/* Botões */
+.icon-btn {
+  transition: 0.3s;
+}
 
-  mat-card{
-      cursor: pointer;
-  }
+.icon-btn:hover {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
 
-  mat-form-field{
-    width: 100%;
-  }
+/* Menu de tema */
+.theme-options {
+  display: flex;
+  gap: 10px;
+  padding: 10px 15px;
+}
 
-  h1{
-    padding: 5px;
-    text-align: center;
-  }
+/* Botões do tema */
+.theme-options button {
+  transition: 0.3s;
+}
 
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-  }
+.theme-options button:hover {
+  transform: scale(1.1);
+}
 
-  .card {
-    flex-basis: calc(50% - 20px); /* Adjust the width and margin as needed */
-    margin: 10px;
-    box-sizing: border-box;
-  }
+/* Ajuste do menu */
+::ng-deep .theme-menu {
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+/* ================= SEARCH ================= */
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.search-field {
+  width: 100%;
+  max-width: 500px;
+  transition: 0.3s ease;
+}
+
+/* 🔥 Fundo branco bonito */
+::ng-deep .search-field .mat-mdc-text-field-wrapper {
+  background-color: #ffffff !important;
+  border-radius: 14px;
+  padding: 4px 10px;
+}
+
+/* Sombra moderna */
+::ng-deep .search-field {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border-radius: 14px;
+}
+
+/* Animação */
+.search-field:focus-within {
+  transform: scale(1.04);
+}
+
+/* Input */
+input {
+  color: #000 !important;
+}
+
+/* Ícones */
+mat-icon {
+  color: #666;
+}
+
+/* ================= CARDS ================= */
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.custom-card {
+  cursor: pointer;
+  border-radius: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Hover top */
+.custom-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+}
+
+/* Título */
+mat-card-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Texto */
+mat-card-content p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+/* ================= EMPTY ================= */
+
+.empty {
+  text-align: center;
+  margin-top: 40px;
+  opacity: 0.7;
+}
+
+/* ================= SOCIAL BAR ================= */
+
+.social-bar {
+  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.social-bar a {
+  color: #fff;
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.social-bar a:hover {
+  transform: scale(1.2);
+}
+
+.linkedin:hover { color: #0A66C2; }
+.github:hover { color: #6e5494; }
+.instagram:hover { color: #E4405F; }
+.site:hover { color: #00c896; }
+.email:hover { color: #ff4d4d; }
+
+/* Footer geral */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Conteúdo */
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Texto */
+.copy {
+  font-weight: 400;
+}
+
+/* Divisor */
+.divider {
+  opacity: 0.5;
+}
+
+/* Link */
+.site-link {
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Efeito underline animado */
+.site-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: currentColor;
+  transition: 0.3s;
+}
+
+.site-link:hover::after {
+  width: 100%;
+}
+
+/* Hover leve */
+.site-link:hover {
+  opacity: 0.8;
+}
+
