@@ -1,6 +1,5 @@
 🚀 Article Hub
 📰 Full Stack Article Management Platform
-<p align="center"><img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/></p>
 
 <p align="center"> <img src="https://img.shields.io/badge/Angular-Frontend-DD0031?style=for-the-badge&logo=angular&logoColor=white"/> <img src="https://img.shields.io/badge/.NET-Backend-512BD4?style=for-the-badge&logo=dotnet&logoColor=white"/> <img src="https://img.shields.io/badge/SQL%20Server-Database-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white"/> <img src="https://img.shields.io/badge/JWT-Auth-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/> </p> <p align="center"> <img src="https://img.shields.io/github/license/seu-usuario/article-hub?style=flat-square"/> <img src="https://img.shields.io/github/stars/seu-usuario/article-hub?style=flat-square"/> <img src="https://img.shields.io/github/forks/seu-usuario/article-hub?style=flat-square"/> </p>
 📌 Overview
