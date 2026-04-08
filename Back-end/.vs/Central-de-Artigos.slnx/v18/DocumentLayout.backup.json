@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\black\\Downloads\\AngularDotNet-Articles\\Back-end\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D93B146B-2608-4B35-BBD1-D83817BA1F10}|Central-de-Artigos\\Central-de-Artigos.csproj|c:\\users\\black\\downloads\\angulardotnet-articles\\back-end\\central-de-artigos\\controllers\\artigocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D93B146B-2608-4B35-BBD1-D83817BA1F10}|Central-de-Artigos\\Central-de-Artigos.csproj|solutionrelative:central-de-artigos\\controllers\\artigocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D93B146B-2608-4B35-BBD1-D83817BA1F10}|Central-de-Artigos\\Central-de-Artigos.csproj|C:\\Users\\black\\Downloads\\AngularDotNet-Articles\\Back-end\\central-de-artigos\\controllers\\appusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D93B146B-2608-4B35-BBD1-D83817BA1F10}|Central-de-Artigos\\Central-de-Artigos.csproj|solutionrelative:central-de-artigos\\controllers\\appusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,6 +17,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{D93B146B-2608-4B35-BBD1-D83817BA1F10}|Central-de-Artigos\\Central-de-Artigos.csproj|C:\\Users\\black\\Downloads\\AngularDotNet-Articles\\Back-end\\central-de-artigos\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D93B146B-2608-4B35-BBD1-D83817BA1F10}|Central-de-Artigos\\Central-de-Artigos.csproj|solutionrelative:central-de-artigos\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D93B146B-2608-4B35-BBD1-D83817BA1F10}|Central-de-Artigos\\Central-de-Artigos.csproj|c:\\users\\black\\downloads\\angulardotnet-articles\\back-end\\central-de-artigos\\controllers\\artigocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D93B146B-2608-4B35-BBD1-D83817BA1F10}|Central-de-Artigos\\Central-de-Artigos.csproj|solutionrelative:central-de-artigos\\controllers\\artigocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,36 +30,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "ArtigoController.cs",
               "DocumentMoniker": "C:\\Users\\black\\Downloads\\AngularDotNet-Articles\\Back-end\\Central-de-Artigos\\Controllers\\ArtigoController.cs",
               "RelativeDocumentMoniker": "Central-de-Artigos\\Controllers\\ArtigoController.cs",
               "ToolTip": "C:\\Users\\black\\Downloads\\AngularDotNet-Articles\\Back-end\\Central-de-Artigos\\Controllers\\ArtigoController.cs",
               "RelativeToolTip": "Central-de-Artigos\\Controllers\\ArtigoController.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAowGwAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAYwGwAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-30T19:43:39.653Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "AppuserController.cs",
               "DocumentMoniker": "C:\\Users\\black\\Downloads\\AngularDotNet-Articles\\Back-end\\Central-de-Artigos\\Controllers\\AppuserController.cs",
               "RelativeDocumentMoniker": "Central-de-Artigos\\Controllers\\AppuserController.cs",
               "ToolTip": "C:\\Users\\black\\Downloads\\AngularDotNet-Articles\\Back-end\\Central-de-Artigos\\Controllers\\AppuserController.cs",
               "RelativeToolTip": "Central-de-Artigos\\Controllers\\AppuserController.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAgwBAAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-27T17:33:33.956Z"
+              "WhenOpened": "2026-03-27T17:33:33.956Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "WebApiConfig.cs",
               "DocumentMoniker": "C:\\Users\\black\\Downloads\\AngularDotNet-Articles\\Back-end\\Central-de-Artigos\\App_Start\\WebApiConfig.cs",
               "RelativeDocumentMoniker": "Central-de-Artigos\\App_Start\\WebApiConfig.cs",
@@ -67,11 +68,12 @@
               "RelativeToolTip": "Central-de-Artigos\\App_Start\\WebApiConfig.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-27T17:32:20.963Z"
+              "WhenOpened": "2026-03-27T17:32:20.963Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Global.asax.cs",
               "DocumentMoniker": "C:\\Users\\black\\Downloads\\AngularDotNet-Articles\\Back-end\\Central-de-Artigos\\Global.asax.cs",
               "RelativeDocumentMoniker": "Central-de-Artigos\\Global.asax.cs",
@@ -79,11 +81,12 @@
               "RelativeToolTip": "Central-de-Artigos\\Global.asax.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-27T17:07:17.737Z"
+              "WhenOpened": "2026-03-27T17:07:17.737Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "CategoriaController.cs",
               "DocumentMoniker": "C:\\Users\\black\\Downloads\\AngularDotNet-Articles\\Back-end\\Central-de-Artigos\\Controllers\\CategoriaController.cs",
               "RelativeDocumentMoniker": "Central-de-Artigos\\Controllers\\CategoriaController.cs",
@@ -91,7 +94,8 @@
               "RelativeToolTip": "Central-de-Artigos\\Controllers\\CategoriaController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T17:33:35.465Z"
+              "WhenOpened": "2026-03-26T17:33:35.465Z",
+              "EditorCaption": ""
             }
           ]
         }
